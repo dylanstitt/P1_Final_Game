@@ -11,10 +11,10 @@ class Treasure:
         return self.name
     
 
-class PeptoSpray(Treasure):
+class PoisonSpray(Treasure):
 
     def __init__(self):
-        super().__init__('Pepto Spray')
+        super().__init__('Poison Spray')
         self.description = 'Blind your enemies for one turn where they can\'t hit you'
     
     
@@ -28,7 +28,7 @@ class PeptoSpray(Treasure):
     
     def use(self, enemy, player):
         enemy.knockedOut = True
-        self.remove(PeptoSpray(), player)
+        self.remove(PoisonSpray(), player)
 
 
 class Coin(Treasure):
@@ -67,54 +67,54 @@ class Consumable:
         player.inv[type(item)].pop()
     
 
-class PeptoBismol(Consumable):
+class SuperApple(Consumable):
 
     def __init__(self):
-        super().__init__('Pepto Bismol', 20)
-        self.description = 'Restores 20 HP and gives you a 10% damage buff for 3 turns (Does not stack with Pepto Biswangs)'
+        super().__init__('Super Apple', 20)
+        self.description = 'Restores 20 HP and gives you a 10% damage buff for 3 turns (Does not stack with Wings)'
 
     
     def use(self, player):
         player.attDmg = 1.10
         player.attBuffTurns = 3
-        self.remove(PeptoBismol(), player)
+        self.remove(SuperApple(), player)
 
     
-class PeptoBiswangs(Consumable):
+class Pills(Consumable):
 
     def __init__(self):
-        super().__init__('Pepto Biswangs', 30)
-        self.description = 'Restores 30 HP and doubles your Attack Damage for 1 turn (Does not stack w/ Pepto Bismol)'
+        super().__init__('Wings', 30)
+        self.description = 'Restores 30 HP and doubles your Attack Damage for 1 turn (Does not stack w/ Super Apple)'
     
 
     def use(self, player):
         player.attDmg = 2
         player.attBuffTurns = 1
-        self.remove(PeptoBiswangs(), player)
+        self.remove(Pills(), player)
 
 
-class PeptoClawmol(Consumable):
+class StrangeWater(Consumable):
 
     def __init__(self):
-        super().__init__('Pepto Clawmol', 15)
-        self.description = 'Restores 15 HP and gives you a chance to missed an attack'
+        super().__init__('Strange Water', 15)
+        self.description = 'Restores 15 HP and gives you a chance to miss an attack'
     
 
     def use(self, player):
         player.isDrunk = True
-        self.remove(PeptoClawmol(), player)
+        self.remove(StrangeWater(), player)
 
 
-class MtnBisDew(Consumable):
+class HealingPotion(Consumable):
 
     def __init__(self):
-        super().__init__('Mtn. BisDew', 50)
+        super().__init__('HealingPotion', 50)
         self.description = 'Restores 50 HP and you are paralyzed for 2 turns'
     
 
     def use(self, player):
         player.paralyzedTurns = 2
-        self.remove(MtnBisDew(), player)
+        self.remove(HealingPotion(), player)
 
 
 class Weapon:
@@ -153,10 +153,10 @@ class Dagger(Weapon):
             self.dmg *= 1.5
 
 
-class PeptoBisclub(Weapon):
+class Club(Weapon):
 
     def __init__(self):
-        super().__init__('Pepto Bisclub', 5)
+        super().__init__('Club', 5)
         self.description = 'Your starting weapon that deals 5 damage and has a chance to knock the enemy out for 1 turn'
 
     
@@ -171,4 +171,4 @@ class Glock(Weapon):
 
     def __init__(self):
         super().__init__('Glock', 1000)
-        self.description = 'A very powerful weapon that one shots every enemy other than the BisDog (1 use)'
+        self.description = 'A very powerful weapon that one shots every enemy other than The King (1 use)'

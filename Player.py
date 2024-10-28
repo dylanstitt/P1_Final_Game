@@ -13,12 +13,12 @@ class Player:
         self.maxHP = 100
         self.hp = self.maxHP
 
-        self.weapons = [PeptoBisclub()]
-        self.display_weapons = [str(PeptoBisclub())]
+        self.weapons = [Club()]
+        self.display_weapons = [str(Club())]
         self.coins = [Coin for i in range(5)]
         self.inv = {}
 
-        starting = [PeptoBismol(), PeptoBiswangs(), PeptoClawmol(), MtnBisDew(), PeptoSpray()]
+        starting = [SuperApple(), Pills(), StrangeWater(), HealingPotion(), PoisonSpray()]
         for item in starting:
             self.pick_up(item)
 
@@ -55,7 +55,7 @@ class Player:
 
 
     def attack(self, weapon, enemy):
-        if isinstance(weapon, PeptoBisclub):
+        if isinstance(weapon, Club):
             weapon.special(enemy)
         
         elif isinstance(weapon, Katana) or isinstance(weapon, Dagger):

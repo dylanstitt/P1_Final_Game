@@ -33,11 +33,11 @@ class Enemy:
             self.hp -= amount
 
 
-class Oreos(Enemy):
+class Spider(Enemy):
 
     def __init__(self):
-        super().__init__('Pepto Bismol Oreos', 15, randint(5, 10))
-        self.description = 'Oreos will attack you when you least expect it (15 HP, 5-10 DMG)'
+        super().__init__('Spider', 15, randint(5, 10))
+        self.description = 'Spider will attack you when you least expect it (15 HP, 5-10 DMG)'
 
     
     def attack(self, player):
@@ -46,7 +46,7 @@ class Oreos(Enemy):
             return
         
         if randint(0, 100) > 60:
-            print('The Oreos put toothpaste in your eyes and did 1.5x damage')
+            print('The Spider put webs in your face and did 1.5x damage')
             time.sleep(2)
             os.system('cls')
             player.take_damage(self.dmg*1.5)
@@ -54,11 +54,11 @@ class Oreos(Enemy):
             player.take_damage(self.dmg)
 
 
-class Peptolupa(Enemy):
+class Scorpion(Enemy):
 
     def __init__(self):
-        super().__init__('Peptolupa', 25, randint(10, 15))
-        self.description = 'Peptolupa is a dangerous taco (25 HP, 10-15 DMG)'
+        super().__init__('Scorpion', 25, randint(10, 15))
+        self.description = 'Scorpion is a dangerous animal (25 HP, 10-15 DMG)'
 
 
     def attack(self, player):
@@ -67,7 +67,7 @@ class Peptolupa(Enemy):
             return
         
         if randint(0, 100) > 60:
-            print('The Peptolupa threw stale tortilla chips and did 1.5x damage')
+            print('The Scorpion threw its stinger at you and did 1.5x damage')
             time.sleep(2)
             os.system('cls')
             player.take_damage(self.dmg*1.5)
@@ -75,11 +75,11 @@ class Peptolupa(Enemy):
             player.take_damage(self.dmg)
 
 
-class Pizza(Enemy):
+class Beast(Enemy):
 
     def __init__(self):
-        super().__init__('Pepto Pizza', 30, randint(15, 20))
-        self.description = '8 slices of death (30 HP, 15-20 DMG)'
+        super().__init__('The Beast', 30, randint(15, 20))
+        self.description = '8 arms of death (30 HP, 15-20 DMG)'
 
     
     def attack(self, player):
@@ -88,7 +88,7 @@ class Pizza(Enemy):
             return
         
         if randint(0, 100) > 60:
-            print('The Pizza chucked burnt crust at you and did 1.5x damage')
+            print('The Beast chucked one of its arms at you and did 1.5x damage')
             time.sleep(2)
             os.system('cls')
             player.take_damage(self.dmg*1.5)
@@ -96,11 +96,11 @@ class Pizza(Enemy):
             player.take_damage(self.dmg)
 
 
-class Van(Enemy):
+class Hoard(Enemy):
 
     def __init__(self):
-        super().__init__('Pepto Van', 40, randint(25, 35))
-        self.description = 'A van that will run you over in a heartbeat (40 HP, 25-35 DMG)'
+        super().__init__('The Hoard', 40, randint(25, 35))
+        self.description = 'A hoard of the undead that will run you over in a heartbeat (40 HP, 25-35 DMG)'
 
     
     def attack(self, player):
@@ -109,7 +109,7 @@ class Van(Enemy):
             return
         
         if randint(0, 100) > 60:
-            print('The Van ran you over and did 1.5x damage')
+            print('The Hoard ran you over and did 1.5x damage')
             time.sleep(2)
             os.system('cls')
             player.take_damage(self.dmg*1.5)
@@ -117,11 +117,11 @@ class Van(Enemy):
             player.take_damage(self.dmg)
 
 
-class House(Enemy):
+class Dragon(Enemy):
 
     def __init__(self):
-        super().__init__('Pepto House', 60, randint(50, 60))
-        self.description = 'A house that will eat you when you enter his fight (60 HP, 40-50 DMG)'
+        super().__init__('Dragon', 60, randint(50, 60))
+        self.description = 'A dragon that will eat you when you enter his fight (60 HP, 40-50 DMG)'
 
 
     def attack(self, player):
@@ -130,7 +130,7 @@ class House(Enemy):
             return
         
         if randint(0, 100) > 95:
-            print('The House jumped on you and killed you instantly')
+            print('The Dragon jumped on you and killed you instantly')
             time.sleep(2)
             os.system('cls')
             player.take_damage(player.maxHP)
@@ -141,7 +141,7 @@ class House(Enemy):
 class Boss(Enemy):
     
     def __init__(self):
-        super().__init__('Pepto BisDog', 150, 25)
+        super().__init__('King', 150, 25)
 
     
     def attack(self, player):
@@ -150,7 +150,7 @@ class Boss(Enemy):
             return
         
         if randint(0, 100) > 95:
-            print('The King drowned you in Mustard and you died')
+            print('The King drowned you in tar and you died')
             time.sleep(2)
             os.system('cls')
             player.take_damage(player.maxHP)
@@ -159,7 +159,7 @@ class Boss(Enemy):
 
 
         if randint(0, 100) > 97:
-            print('The Boss healed to full HP')
+            print('The King healed to full HP')
             time.sleep(2)
             os.system('cls')
             self.hp = self.maxHP
