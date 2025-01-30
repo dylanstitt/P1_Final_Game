@@ -63,7 +63,7 @@ class Player:
 
         if self.paralyzedTurns > 0:
             self.paralyzedTurns -= 1
-            print('You are paralayed')
+            print('You are paralyzed')
             time.sleep(3)
             return
 

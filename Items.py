@@ -83,7 +83,7 @@ class SuperApple(Consumable):
 class Pills(Consumable):
 
     def __init__(self):
-        super().__init__('Wings', 30)
+        super().__init__('Pills', 30)
         self.description = 'Restores 30 HP and doubles your Attack Damage for 1 turn (Does not stack w/ Super Apple)'
     
 

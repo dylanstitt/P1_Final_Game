@@ -1,6 +1,6 @@
 def cav_me(num):
     if num == 1:
-        print('\nYou have fallen into the Pepto BisDog\'s trap.\nHe is hoping that this will stop you before you get to his castle')
+        print('\nYou have fallen into the Boss\'s trap.\nHe is hoping that this will stop you before you get to his castle')
     
     elif num == 2:
         print('\nYou have stumbled into a dark cave! Use your coins or your brains to found a way out!')
@@ -11,13 +11,13 @@ def cav_me(num):
 
 def tre_me(num):
     if num == 1:
-        print('\nYou have found the lost treasure of the King.\nHe is not too happy that you found it, but you\'ll have to use it to defeat him and his army')
+        print('\nYou have found the lost treasure of the Boss.\nHe is not too happy that you found it, but you\'ll have to use it to defeat him and his army')
 
     elif num == 2:
-        print('\nYou have found some pepto goods! Collect them and continue!')
+        print('\nYou have found some goods! Collect them and continue!')
 
     else:
-        print('\nYou have spotted a chest. It\'s full of ancient Pepto Treasures! Take them quick and move on.')
+        print('\nYou have spotted a chest. It\'s full of ancient treasures! Take them quick and move on.')
 
 
 def fig_me(num):

@@ -131,7 +131,7 @@ class World:
 
 
     def treasure(self, player):
-        # Gives random loot w/ a guarunteed Pepto Spray
+        # Gives random loot w/ a guarunteed PoisonSpray
         print(art.treasure)
         tre_me(randint(1, 3))
 
@@ -143,8 +143,8 @@ class World:
 
         new_items.append(f'{rand} Coins')
 
-        weapons = [Glock, PeptoBisclub, Dagger, Katana]
-        consumables = [PeptoBismol, PeptoBiswangs, PeptoClawmol, MtnBisDew]
+        weapons = [Glock, Club, Dagger, Katana]
+        consumables = [SuperApple, Pills, StrangeWater, HealingPotion]
 
         if randint(0, 100) > 65:
             weapon = choice(weapons)()
@@ -169,8 +169,8 @@ class World:
             new_items.append(str(consum))
 
         if randint(0, 100) > 55:
-            player.pick_up(PeptoSpray())
-            new_items.append('Pepto Spray')
+            player.pick_up(PoisonSpray())
+            new_items.append('Poison Spray')
 
         new_items = ', '.join(new_items)
         print(f'\nYou received: \n{new_items}')
@@ -199,7 +199,7 @@ class World:
             club_times = 0
             
             for i in player.display_weapons:
-              if 'Pepto Bisclub' == i:
+              if 'Club' == i:
                 club_times += 1
 
             if len(player.weapons) == 1 or club_times == len(player.display_weapons):
@@ -279,15 +279,15 @@ class World:
                         
                         match consum:
                             case 1:
-                                con.append(PeptoBismol)
+                                con.append(SuperApple)
                             case 2:
-                                con.append(PeptoBiswangs)
+                                con.append(Pills)
                             case 3:
-                                con.append(PeptoClawmol)
+                                con.append(StrangeWater)
                             case 4:
-                                con.append(MtnBisDew)
+                                con.append(HealingPotion)
                             case 5:
-                                con.append(PeptoSpray)
+                                con.append(PoisonSpray)
                         
                         for i in con:
                             if isinstance(i(), Consumable):
@@ -311,7 +311,7 @@ class World:
             if enemy.hp == 0:
                 os.system('cls')
                 if isinstance(enemy, Boss):
-                    print('You beat the game!! Congrats on defeating the Pepto BisDog! See you soon...')
+                    print('You beat the game!! Congrats on defeating the Boss! See you soon...')
                     time.sleep(6)
                     return 'Won Boss'
                 
@@ -328,18 +328,18 @@ class World:
         # Selects a random enemy for fighting
         rand = randint(0, 100)
         if rand > 95:
-            return House()
+            return Dragon()
         
         elif rand > 85:
-            return Van()
+            return Hoard()
         
         elif rand > 70:
             if randint(0, 100) > 50:
-                return Pizza()
-            return Peptolupa()
+                return Beast()
+            return Scorpion()
         
         else:
-            return Oreos()
+            return Spider()
     
 
     def win(self, player):
