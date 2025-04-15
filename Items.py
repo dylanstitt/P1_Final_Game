@@ -5,7 +5,6 @@ class Treasure:
     
     def __init__(self, name):
         self.name = name
-    
 
     def __str__(self):
         return self.name
@@ -71,7 +70,7 @@ class SuperApple(Consumable):
 
     def __init__(self):
         super().__init__('Super Apple', 20)
-        self.description = 'Restores 20 HP and gives you a 10% damage buff for 3 turns (Does not stack with Wings)'
+        self.description = 'Restores 20 HP and gives you a 10% damage buff for 3 turns (Does not stack with Pills)'
 
     
     def use(self, player):

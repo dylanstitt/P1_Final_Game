@@ -233,10 +233,11 @@ class World:
                         os.system('cls')
             
             con = []
-            cons = input('\n\nEnter 1 to use a consumable or enter 0 to not: ')
+            cons = None
             
             selecting = True
             while selecting:
+                cons = input('\n\nEnter 1 to use a consumable or enter 0 to not: ')
                 try:
                     cons = int(cons)
                     selecting = False

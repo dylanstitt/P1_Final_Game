@@ -6,7 +6,7 @@ def start():
     print('This is The Kingdom. Your goal is to traverse a 10x10 forest to find the King\'s Castle and defeat him')
     time.sleep(2)
     print('You are a small towns person that has finally realized the king is corrupt and needs stopped, and so, you begin your journey!')
-    input('\\nPress ENTER when ready to begin')
+    input('\nPress ENTER when ready to begin')
     os.system('cls')
 
 
